@@ -1,0 +1,23 @@
+﻿@model List<MODEL.Produit.ProduitListVM>
+@{
+
+    ViewData["Title"] = "Produit Page";
+
+}
+
+<div class="container text-center d-flex justify-content-center">
+    @foreach (var item in Model)
+    {
+        <div class="mx-4">
+            <div class="card" style="width: 18rem;">
+            <img src="@Url.Content("~/images/" + @item.Image + ".jpg")" class="card-img-top" alt="stock" width="200" height="200" />
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                <h5 class="card-title">@item.Prix $</h5>
+                <p>@item.Description</p>
+
+                </div>
+            </div>
+        </div>
+    }
+</div>

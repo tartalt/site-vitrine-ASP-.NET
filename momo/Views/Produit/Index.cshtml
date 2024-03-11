@@ -1,0 +1,21 @@
+﻿@model List<MODEL.Produit.ProduitListVM>
+@{
+
+    ViewData["Title"] = "Produit Page";
+
+}
+<h1>List :</h1>
+@foreach (var item in Model)
+{
+    <div class="d-flex mt-5">
+        <div class="card mx-4" style="width: 18rem;">
+            <img src="@Url.Content("~/images/" + @item.Image + ".jpg")" class="card-img-top" alt="stock" width="200" height="200" />
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                <h5 class="card-title">@item.Prix</h5>
+
+                <a class="button button-primary " asp-action="Categories" asp-controller="Produit" asp-route="@item.Id">Show</a>
+            </div>
+        </div>
+    </div>
+}

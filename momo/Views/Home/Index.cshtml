@@ -1,0 +1,24 @@
+﻿ @using System.Security.Claims;
+@model List<MODEL.Category.CategoryListVM>
+@{
+   
+    ViewData["Title"] = "Home Page";
+    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+    
+}
+<h1>CATEGORIES:</h1>
+<div class="container text-center d-flex justify-content-center">
+@foreach (var item in Model)
+{
+        <div class="mx-4">
+            <div class="card" style="width: 18rem;">
+            <img src="@Url.Content("~/images/" + @item.Image + ".jpg")" class="card-img-top" alt="stock" width="200" height="200" />
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+               <a class="button button-primary" asp-controller="Produit" asp-action="Categories" asp-route-id="@item.Id">Show</a>
+
+            </div>
+        </div>
+    </div>
+    }
+</div>

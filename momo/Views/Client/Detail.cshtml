@@ -1,0 +1,37 @@
+﻿@model MODEL.Client.ClientDetailVM
+
+@{
+    ViewData["Title"] = "Client Details";
+}
+
+<div class="container">
+    <h2 class="text-center">Profile   
+       
+            </h2>
+    <div class="row">
+        <a asp-controller="Client" asp-action="Edit" asp-route-id="@Model.Id" class="btn text-center btn-success">
+            Update
+        </a>
+        <div class="col-md-6 offset-md-3">
+            <table class="table table-bordered">
+                <tr>
+                    <th>ID</th>
+                    <td>@Model.Id</td>
+                </tr>
+                <tr>
+                    <th>Nom</th>
+                    <td>@Model.Name</td>
+                </tr>
+                
+               
+                <tr>
+                    <th>Email</th>
+                    <td>@Model.Email</td>
+                </tr>
+               
+            </table>
+        </div>
+    </div>
+</div>
+
+
